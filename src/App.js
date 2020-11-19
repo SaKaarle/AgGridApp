@@ -15,7 +15,7 @@ function App() {
   const inputChanged = (e) => {
     setTodo({ ...todo, [e.target.name]: e.target.value });
   };
-  
+
 
   const addTodo = (e) => {
     e.preventDefault();
@@ -23,12 +23,7 @@ function App() {
   };
 
   const deleteTodo = () => {
-   setTodos(
-     todos.filter(
-       (desc, index) =>
-           index !== gridRef.current.getSelectedNodes()[0].childIndex
-     )
-    );
+   setTodos(todos.filter((desc, index) =>index !== gridRef.current.getSelectedNodes()[0].childIndex))
     
     if (gridRef.current.getSelectedNodes().length > 0){
       setTodos(todos.filter((todo,index) => index !== gridRef.current.getSelectedNodes()[0].childIndex))
@@ -46,9 +41,9 @@ function App() {
       sortable: true,
       filter: true,
       cellStyle: (params) =>
-        params.value === "High" || "high"
+        params.value === "High"
           ? { color: "red" }
-          : { color: "black" },
+          : { color: "white" },
     },
   ];
   return (
